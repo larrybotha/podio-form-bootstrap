@@ -19,11 +19,14 @@ html, button, input, select, textarea {
 }
 
 body {
-	background: #fff;
+	background: #fff;	
+	font-family: arial, helvetica, sans-serif;
 	font-size: 1em;
 	line-height: 1.5;
 	min-height: 100%;
 	margin: 0;
+	padding: 16px;
+	padding: 1rem;
 }
 
 ::-moz-selection {
@@ -75,8 +78,84 @@ abbr[title] { border-bottom: 1px dotted;}
 b, strong { font-weight: bold;}
 
 /* =============================================================================
-	 &Form Styles
+	 &Forms
 	 ========================================================================== */
+form { margin: 0;}
+
+fieldset {
+	border: 1px solid #c0c0c0;
+	margin: 0 2px;
+	padding: 0.35em 0.625em 0.75em;
+}
+
+label {	cursor: pointer;}
+
+legend {
+	border: 0;
+	padding: 0;
+}
+
+button, input, select, textarea {
+	font-family: inherit;
+	font-size: 100%;
+	margin: 0;
+	vertical-align: baseline;
+}
+
+button, input { line-height: normal;}
+
+button, html input[type="button"],
+input[type="reset"], input[type="submit"] {
+	-webkit-appearance: button;
+	cursor: pointer;
+}
+
+button[disabled], input[disabled], :disabled, .disabled, .unselectable {
+	color: #999;
+	cursor: default;
+}
+
+input[type="checkbox"], input[type="radio"] {
+	box-sizing: border-box;
+	padding: 0;
+}
+
+input[type="search"] {
+	-webkit-appearance: textfield;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-cancel-button {	-webkit-appearance: none;}
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+textarea {
+	overflow: auto;
+	vertical-align: top;
+	resize: vertical;
+}
+
+::-webkit-input-placeholder { color: #aaa;}
+:-moz-placeholder { color: #aaa;}
+:-o-placeholder { color: #aaa;}
+:-ms-placeholder { color: #aaa;}
+
+focus::-webkit-input-placeholder { color: #cccccc;}
+focus:-moz-placeholder { color: #cccccc;}
+focus:-o-placeholder { color: #cccccc;}
+focus:-ms-placeholder { color: #cccccc;
+
+/* =============================================================================
+	 &Podio Form Styles
+	 ========================================================================== */
+/* -----------------------------------------------------------------------------
+	 wrapper
+	 -------------------------------------------------------------------------- */
 #wrapper {
 	margin: 0 auto;
 	width: 540px;
@@ -91,11 +170,183 @@ b, strong { font-weight: bold;}
 }
 #wrapper #content .form-description { margin-bottom: 42px}
 #wrapper .footer { text-align: center}
-html.mobile-device #wrapper {
+.mobile-device #wrapper {
 	padding-top: 0;
 	width: 100%
 }
-html.dark #wrapper #content {
-	box-shadow: none;
-	background: #333
+h5 {}
+.form-description {}
+.form .field span.label {}
+.form .field input.text {}
+.form .field h5.contact-header {}
+.form .field textarea {}
+.form .field select.state {}
+.form .field ul.question-wrapper li (label input) {}
+.form .field ul.question-wrapper li (label input) {}
+.form .field .date-wrapper input.(date-input/time-input) {}
+.form .field input.file {}
+.form .field a.add-file-field {}
+.form .field input.money {}
+.form .field select.money {}
+.form .field .duration-wrapper .duration-group (input.digits) {}
+.form .field select.app {}
+#dynamic_recaptcha {}
+.buttons .submit {}
+.messages {}
+
+.field {
+	overflow: hidden;
+	clear: both
+}
+
+input,textarea,select {
+	margin-bottom: 5px !important
+}
+
+input[type="radio"] {
+	margin-left: 1px
+}
+
+.form .field textarea {
+	height: 75px
+}
+
+.add-file-field {
+	margin-bottom: 10px;
+	margin-top: 4px;
+	display: block
+}
+
+.buttons {
+	width: 100%;
+	clear: both
+}
+
+.file {
+	color: #999
+}
+
+a.add-file-field {
+	color: #3376a4;
+	text-decoration: none
+}
+
+.slider {
+	width: 50%;
+	float: left;
+	margin-top: 3px
+}
+
+.progress {
+	float: left;
+	margin-right: 10px
+}
+
+.buttons .submit: hover {
+	background-color: #f3f3f3
+}
+
+a.add-file-field: hover {
+	text-decoration: underline
+}
+
+.form .field input.text,.form .field textarea,.form .field input.date-input,.form .field input.time-input {
+	border-radius: 3px;
+	width: 100%;
+	border: 1px solid #ccc;
+	margin-bottom: 15px;
+	padding: 6px;
+	color: #555
+}
+
+.form .duration-group {
+	float: left;
+	height: 33px;
+	overflow: hidden;
+	margin-right: 21px
+}
+
+.form .duration-group input.text {
+	width: 55px
+}
+
+.form .field input.text: hover,.form .field textarea: hover,.form .field input.text: focus,.form .field textarea: focus {
+	border-color: #999
+}
+
+.form .field .label em {
+	color: red;
+	margin-left: 3px
+}
+
+.form .field select.money {
+	display: inline-block;
+	margin-right: 10px
+}
+
+.form .field select.app {
+	max-width: 100%
+}
+
+.form .field input.money {
+	display: inline-block;
+	width: 25%
+}
+
+.form .field input.date-input,.form .field input.time-input {
+	width: 122px
+}
+
+.label {
+	color: #555;
+	font-weight: bold;
+	display: block;
+	margin-bottom: 5px;
+	margin-top: 10px;
+	clear: both
+}
+
+.buttons .submit {
+	border-radius: 5px;
+	display: block;
+	padding: 10px 10px 10px;
+	font-size: 117%;
+	text-decoration: none;
+	font-weight: bold;
+	line-height: 1;
+	border: 1px solid rgba(0,0,0,0.05);
+	border-bottom: 1px solid rgba(0,0,0,0.25);
+	background: #f5f5f5;
+	background: -webkit-linear-gradient(top, #fff, #f5f5f5);
+	background: -o-linear-gradient(top, #fff, #f5f5f5);
+	background: -ms-linear-gradient(top, #fff, #f5f5f5);
+	background: -moz-linear-gradient(top, #fff, #f5f5f5);
+	color: #555;
+	cursor: pointer;
+	clear: both
+}
+
+.buttons .submit.loader {
+	background: #f5f5f5;
+	background: -webkit-linear-gradient(top, #fff, #f5f5f5);
+	background: -o-linear-gradient(top, #fff, #f5f5f5);
+	background: -ms-linear-gradient(top, #fff, #f5f5f5);
+	background: -moz-linear-gradient(top, #fff, #f5f5f5);
+	background-image: url(/shared/images/loader.gif?1347364550);
+	background-repeat: no-repeat;
+	background-position: center center;
+	cursor: default;
+	color: transparent
+}
+
+.buttons .submit.loader .icon-16 {
+	display: none
+}
+
+body.ie7 #wrapper .form .field select.money {
+	vertical-align: middle
+}
+
+body.ie7 #wrapper .form .slider {
+	margin-top: 5px
 }
