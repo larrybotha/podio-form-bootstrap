@@ -1,0 +1,101 @@
+@charset "UTF-8";
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 100%; /* 14 */
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	height: 100%;
+}
+
+html, button, input, select, textarea {
+	font-family: Arial,	sans-serif;
+	color: #2d2d2d;
+}
+
+body {
+	background: #fff;
+	font-size: 1em;
+	line-height: 1.5;
+	min-height: 100%;
+	margin: 0;
+}
+
+::-moz-selection {
+	background: #fe57a1;
+	color: white;
+	text-shadow: none;
+}
+
+::selection {
+	background: #fe57a1;
+	color: white;
+	text-shadow: none;
+}
+
+/* =============================================================================
+	 &Links
+	 ========================================================================== */
+a {
+	color: #00e;
+	text-decoration: none;
+	-webkit-transition: all 100ms ease-in-out;
+	-moz-transition: all 100ms ease-in-out;
+	-o-transition: all 100ms ease-in-out;
+	transition: all 100ms ease-in-out;
+	outline: 0;
+}
+
+a:hover { color: #06e;}
+
+a:active {
+	color: #06e;
+	-webkit-transition: all 0ms;
+	-moz-transition: all 0ms;
+	-o-transition: all 0ms;
+	transition: all 0ms;
+}
+
+a:focus { outline: thin dotted;}
+
+a:hover, a:active { outline: 0;}
+
+/* =============================================================================
+	 &Typography
+	 ========================================================================== */
+p { hyphens: auto;}
+
+abbr[title] { border-bottom: 1px dotted;}
+
+b, strong { font-weight: bold;}
+
+/* =============================================================================
+	 &Form Styles
+	 ========================================================================== */
+#wrapper {
+	margin: 0 auto;
+	width: 540px;
+	padding-top: 29px
+}
+#wrapper.with-hints { margin-right: auto}
+#wrapper #content {
+	background: #FFF;
+	padding: 34px 30px;
+	box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+	border-radius: 4px
+}
+#wrapper #content .form-description { margin-bottom: 42px}
+#wrapper .footer { text-align: center}
+html.mobile-device #wrapper {
+	padding-top: 0;
+	width: 100%
+}
+html.dark #wrapper #content {
+	box-shadow: none;
+	background: #333
+}
